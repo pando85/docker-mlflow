@@ -19,6 +19,12 @@ stages:
 
 jobs:
   include:
+    - stage: amd64
+      name: "build and push amd64 and manifest"
+      script: bash deploy.sh
+      env:
+        - DOCKER_USERNAME=pando85
+        - secure: "DgtUhFqN8bYTMMMLRUB0RGwrh0BwX8z54rIlMlT+TrBoxIegQ+RGB0Y6JVhjNOz8n+SS9XNlzTXRHYhrTjc6dVoKPuIJdwgQf695gsipxJetG4xun0/+DZEF2v5/TMupa4ZEtziaUS8RA1JjcpmfoWsQBhxJeF48X+yk5hvxlDeN2RZYjTxTC4aVhB4OyxuoWhbGSO9cTVx+lM58JZrsf2d3ev2ctWLJCsPlaAZjx/blm96voHFNZs7RxtS2Kj+Y+ghPDR6HSwtJeHWHvMFlYXwyJNc+aWmbvSnni0vD7PWeK4UuFli8mkxgNjzUyW/FsSd41PPeqoJyz2TZmSVyR4Qo73IuF1Q7zAVDXDz1vrWh2QO5WNTq36MiZFrk52JKxhS597jNf407LhXZKYMLJrX4A9z8vCHGmlP0SXtrrX3sWZL0zrPzy5hBaehOfIj0vVxI/Ia1PfffpTWLG1O+WSUchU05ZS/74sbu4HD3uI/v6ghVMuYad991zduLVDEpHLgn6J6MxvQMfJu+DQZeJzp4dT0YRPnudJp2NX+AQXnb/M/rmczwSRwv6r+U5z5tB81FILl9pl/rtrbnHEL7mlvnrtGJGl+KjWV7QlP9P8ShOxUNzxbrX0voaPqGYca5+Q6jTFki9zIQ6wNGuv6mYWI0b8cKPyp2sOBXQSdwkx8="
     - stage: arm64
       name: "build and push arm"
       arch: arm64
@@ -27,11 +33,5 @@ jobs:
         # workaround arm64: https://travis-ci.community/t/error-occurs-when-deploy-to-github-release-you-dont-have-write-permissions-for-the-var-lib-gems-2-5-0-directory/5840
         - PATH=~/.ruby/bin:$PATH
         - GEM_HOME=~/.ruby
-        - DOCKER_USERNAME=pando85
-        - secure: "DgtUhFqN8bYTMMMLRUB0RGwrh0BwX8z54rIlMlT+TrBoxIegQ+RGB0Y6JVhjNOz8n+SS9XNlzTXRHYhrTjc6dVoKPuIJdwgQf695gsipxJetG4xun0/+DZEF2v5/TMupa4ZEtziaUS8RA1JjcpmfoWsQBhxJeF48X+yk5hvxlDeN2RZYjTxTC4aVhB4OyxuoWhbGSO9cTVx+lM58JZrsf2d3ev2ctWLJCsPlaAZjx/blm96voHFNZs7RxtS2Kj+Y+ghPDR6HSwtJeHWHvMFlYXwyJNc+aWmbvSnni0vD7PWeK4UuFli8mkxgNjzUyW/FsSd41PPeqoJyz2TZmSVyR4Qo73IuF1Q7zAVDXDz1vrWh2QO5WNTq36MiZFrk52JKxhS597jNf407LhXZKYMLJrX4A9z8vCHGmlP0SXtrrX3sWZL0zrPzy5hBaehOfIj0vVxI/Ia1PfffpTWLG1O+WSUchU05ZS/74sbu4HD3uI/v6ghVMuYad991zduLVDEpHLgn6J6MxvQMfJu+DQZeJzp4dT0YRPnudJp2NX+AQXnb/M/rmczwSRwv6r+U5z5tB81FILl9pl/rtrbnHEL7mlvnrtGJGl+KjWV7QlP9P8ShOxUNzxbrX0voaPqGYca5+Q6jTFki9zIQ6wNGuv6mYWI0b8cKPyp2sOBXQSdwkx8="
-    - stage: amd64
-      name: "build and push amd64 and manifest"
-      script: bash deploy.sh
-      env:
         - DOCKER_USERNAME=pando85
         - secure: "DgtUhFqN8bYTMMMLRUB0RGwrh0BwX8z54rIlMlT+TrBoxIegQ+RGB0Y6JVhjNOz8n+SS9XNlzTXRHYhrTjc6dVoKPuIJdwgQf695gsipxJetG4xun0/+DZEF2v5/TMupa4ZEtziaUS8RA1JjcpmfoWsQBhxJeF48X+yk5hvxlDeN2RZYjTxTC4aVhB4OyxuoWhbGSO9cTVx+lM58JZrsf2d3ev2ctWLJCsPlaAZjx/blm96voHFNZs7RxtS2Kj+Y+ghPDR6HSwtJeHWHvMFlYXwyJNc+aWmbvSnni0vD7PWeK4UuFli8mkxgNjzUyW/FsSd41PPeqoJyz2TZmSVyR4Qo73IuF1Q7zAVDXDz1vrWh2QO5WNTq36MiZFrk52JKxhS597jNf407LhXZKYMLJrX4A9z8vCHGmlP0SXtrrX3sWZL0zrPzy5hBaehOfIj0vVxI/Ia1PfffpTWLG1O+WSUchU05ZS/74sbu4HD3uI/v6ghVMuYad991zduLVDEpHLgn6J6MxvQMfJu+DQZeJzp4dT0YRPnudJp2NX+AQXnb/M/rmczwSRwv6r+U5z5tB81FILl9pl/rtrbnHEL7mlvnrtGJGl+KjWV7QlP9P8ShOxUNzxbrX0voaPqGYca5+Q6jTFki9zIQ6wNGuv6mYWI0b8cKPyp2sOBXQSdwkx8="
