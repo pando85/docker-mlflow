@@ -13,6 +13,7 @@ branches:
     - master
 
 stages:
+  - test
   - arm64
   - amd64
 
