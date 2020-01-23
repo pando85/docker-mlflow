@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/bash +x
 set -e
 
 export ENV_IMAGE_NAME=${ENV_IMAGE_NAME:-pando85/mlflow}
