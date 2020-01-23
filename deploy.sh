@@ -1,10 +1,10 @@
-#!/bin/bash +x
-set -e
+#!/bin/bash
+set +x
+#set -e
 
 export ENV_IMAGE_NAME=${ENV_IMAGE_NAME:-pando85/mlflow}
 
-echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
-
+docker login -u "$DOCKER_USERNAME" -p "$DOCKER_PASSWORD"
 
 make push-image
 
