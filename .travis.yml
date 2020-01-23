@@ -28,10 +28,8 @@ jobs:
         - PATH=~/.ruby/bin:$PATH
         - GEM_HOME=~/.ruby
         - DOCKER_USERNAME=pando85
-        - secure: "RLKgLYMvI7YUpPe9yUVDWgGRBF+R7AseGVENVsr8awLuGBasZZg8Fpf0REcWF725MyHyPKWlN5JzEcWP0wXHd9clyG53VDTggbmgvpm0i/Ht8Pc5cuWenL3FIyPec+Sgw3EwUbC/HcIjUWKJNO9bgQEHTQ2Pt2HGU9MoYtOKAlc9Go1qrPDfWx6RO8k6ryM5p7DTmXlZQahDota88iq298VF/vmQi9kQOyWnI37wxHzCtLbTsQjZAaJGayNu2+4RaRp4ge8Hd13snbkz2GMpFakGVQVtteohv/39sJTcjGx4EnnrNneULK5Cb5DmqMo5PIsSyawkkElbEjcCXqzLwCg/tMEZg5ySTB9BGwaayCrNOjFWYRYE0fBOw5S4aR4p+pe8MZ6m5zbxhcZqvkkTtVysc17QoHxr6eAVmfZnF/HIOuZG1oJk6Otsurbi4e+D5lX+UARqevyFtmpGK/Dgyv8oMGPzrFik60GdYC4B/XQ7V1MhUHmoMa4lZSrb6wvoa06akqKeGotnx1QsrArzVovgUlsL0o2/dBwdv1Gd2a+oBaxPeqch0PXPZmqnu8SHbubcWMvjWMhy/3/rlHzH3xPN0ZAo8a6FsRQszvJt39tgH61rsAyTGzp8QNyAhhhFIQSWPd2v9qjUt/k90jk3Sj0rtm7x/SGoUcOVA5dCghg="
     - stage: amd64
       name: "build and push amd64 and manifest"
       script: ./deploy.sh
       env:
         - DOCKER_USERNAME=pando85
-        - secure: "RLKgLYMvI7YUpPe9yUVDWgGRBF+R7AseGVENVsr8awLuGBasZZg8Fpf0REcWF725MyHyPKWlN5JzEcWP0wXHd9clyG53VDTggbmgvpm0i/Ht8Pc5cuWenL3FIyPec+Sgw3EwUbC/HcIjUWKJNO9bgQEHTQ2Pt2HGU9MoYtOKAlc9Go1qrPDfWx6RO8k6ryM5p7DTmXlZQahDota88iq298VF/vmQi9kQOyWnI37wxHzCtLbTsQjZAaJGayNu2+4RaRp4ge8Hd13snbkz2GMpFakGVQVtteohv/39sJTcjGx4EnnrNneULK5Cb5DmqMo5PIsSyawkkElbEjcCXqzLwCg/tMEZg5ySTB9BGwaayCrNOjFWYRYE0fBOw5S4aR4p+pe8MZ6m5zbxhcZqvkkTtVysc17QoHxr6eAVmfZnF/HIOuZG1oJk6Otsurbi4e+D5lX+UARqevyFtmpGK/Dgyv8oMGPzrFik60GdYC4B/XQ7V1MhUHmoMa4lZSrb6wvoa06akqKeGotnx1QsrArzVovgUlsL0o2/dBwdv1Gd2a+oBaxPeqch0PXPZmqnu8SHbubcWMvjWMhy/3/rlHzH3xPN0ZAo8a6FsRQszvJt39tgH61rsAyTGzp8QNyAhhhFIQSWPd2v9qjUt/k90jk3Sj0rtm7x/SGoUcOVA5dCghg="
