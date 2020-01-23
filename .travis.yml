@@ -19,6 +19,8 @@ stages:
 
 jobs:
   include:
+    - stage: test
+      script: echo yea
     - stage: arm64
       name: "build and push arm"
       arch: arm64
